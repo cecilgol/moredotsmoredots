@@ -1,0 +1,2 @@
+Sep 04 11:04:54 host=smtp.gmail.com tls=on auth=on user=thorassic5@gmail.com from=thorassic5 recipients=info@iisr.mu mailsize=94 smtpstatus=250 smtpmsg='250 2.0.0 OK 1536077094 i20-v6sm7619987iti.15 - gsmtp' exitcode=EX_OK
+Sep 04 11:05:30 host=smtp.gmail.com tls=on auth=on user=thorassic5@gmail.com from=thorassic5 recipients=cecilgol@gmail.com mailsize=108 smtpstatus=250 smtpmsg='250 2.0.0 OK 1536077130 y21-v6sm7801941ioa.54 - gsmtp' exitcode=EX_OK

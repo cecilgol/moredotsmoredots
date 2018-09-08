@@ -1,0 +1,51 @@
+#paths
+set folder = ~/.mail
+set alias_file = ~/.mutt/aliases
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+
+#plugins
+#uncomment to use
+source ~/.mutt/sidebar
+
+#aliases
+set sort_alias = alias
+set reverse_alias = yes
+source $alias_file
+
+#shut up mutt
+set wait_key = no        # shut up, mutt
+set mbox_type = Maildir  # mailbox type
+set timeout = 3          # idle time before scanning
+set mail_check = 0       # minimum time between scans
+unset move               # gmail does that
+set delete               # don't ask, just do
+unset confirmappend      # don't ask, just do!
+set quit                 # don't ask, just do!!
+unset mark_old           # read/new is good enough for me
+set beep_new             # bell on new mails
+set pipe_decode          # strip headers and eval mimes when piping
+set thorough_search      # strip headers and eval mimes before searching
+
+#sendmail
+set from     = "thorassic5@gmail.com"
+set sendmail = "/usr/bin/msmtp -a thorassic5"
+set sendmail_wait = 0
+unset record
+
+#status
+set status_chars  = " *%A"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+#headers
+ignore *                                # ignore all headers
+unignore from: to: cc: date: subject:   # show only these
+unhdr_order *                           # some distros order things by default
+hdr_order from: to: cc: date: subject:  # and in this order
+
+#accounts ----- uuuuuugh
+set spoolfile = "+thorassic5/Inbox"
+
+#colors
+source ~/.mutt/colors

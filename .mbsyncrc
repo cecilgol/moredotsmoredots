@@ -1,0 +1,43 @@
+IMAPAccount thorassic5
+Host imap.gmail.com
+User thorassic5@gmail.com
+PassCmd "pass show email/thorassic5@gmail.com"
+UseIMAPS yes
+RequireSSL yes
+CertificateFile /etc/ssl/certs/ca-bundle.crt
+
+IMAPStore thorassic5-remote
+Account thorassic5
+
+MaildirStore thorassic5-local
+Subfolders Verbatim
+Path ~/.mail/thorassic5/
+Inbox ~/.mail/thorassic5/Inbox
+
+Channel thorassic5
+Master :thorassic5-remote:
+Slave :thorassic5-local:
+Create Both
+SyncState *
+
+IMAPAccount michael.stroud@speechanddebate.org 
+Host imap.gmail.com
+User michael.stroud@speechanddebate.org
+PassCmd "pass show email/michael.stroud@speechanddebate.org"
+UseIMAPS yes
+RequireSSL yes
+CertificateFile /etc/ssl/certs/ca-bundle.crt
+
+IMAPStore michael.stroud@speechanddebate.org-remote
+Account michael.stroud@speechanddebate.org
+
+MaildirStore michael.stroud@speechanddebate.org-local
+Subfolders Verbatim
+Path ~/.mail/michael.stroud@speechanddebate.org/
+Inbox ~/.mail/michael.stroud@speechanddebate.org/Inbox
+
+Channel michael.stroud@speechanddebate.org
+Master :michael.stroud@speechanddebate.org-remote:
+Slave :michael.stroud@speechanddebate.org-local:
+Create Both
+SyncState *

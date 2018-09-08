@@ -1,0 +1,76 @@
+separator=false
+separator_block_width=5
+border_top=0
+border_left=0
+border_right=0
+border_bottom=2
+
+command=$HOME/.i3/i3blocks/blocks/$BLOCK_NAME
+
+[bandwidth]
+instance=enp0s31f6
+label=
+interval=5
+border=#537AB9
+
+# [network]
+# label=
+# instance=enp0s31f6
+# interval=10
+# border=#d381c3
+
+
+[audio]
+label=
+interval=5
+border=#4588A2
+
+# [ip-address]
+# label=
+# interval=60
+# border=#3971ed
+
+#[mail]
+#label=
+#instance=~/.gmx-private
+#interval=60
+
+[weather]
+command=$HOME/scripts/weather.py
+interval=1800
+border=#436F95
+
+#[packages]
+#label=
+#interval=300
+#border=#e0e0e0
+
+[memory]
+label=
+instance=mem;free
+interval=30
+border=#428297
+
+[cpu]
+label=
+interval=2
+border=#40CC96
+
+#[datetime]
+# label=
+#instance=%m/%d %a %H:%M:%S
+#interval=1
+#border=#9196b0
+#markup=pango
+
+[taskwarrior]
+command=$HOME/scripts/taskwarrior
+label=
+interval=30
+border=#3DA88B
+
+[calendar]
+command=$HOME/scripts/calendar
+label=
+interval=1
+border=#3A928A
