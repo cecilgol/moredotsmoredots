@@ -1,0 +1,15 @@
+set from = "thorassic5@gmail.com"
+set sendmail = "/usr/bin/msmtp -a thorassic5@gmail.com"
+set mbox    = "+thorassic5/archive"
+set postponed = "+thorassic5/drafts"
+
+color status cyan default
+
+macro index ,c "<change-folder>+michael.stroud@speechanddebate.org/INBOX<enter>" "rotate accounts"
+
+macro index ga "<change-folder>=thorassic5/archive<enter>" "Go to all mail"
+macro index gd "<change-folder>=thorassic5/drafts<enter>" "Go to drafts"
+macro index gi "<change-folder>=thorassic5/INBOX<enter>" "Go to inbox"
+macro index gt "<change-folder>=thorassic5/trash<enter>" "Go to trash"
+macro index,pager d "<save-message>=thorassic5/trash<enter><enter>" "Trash"
+macro index,pager y "<save-message>=thorassic5/archive<enter><enter>" "Archive"

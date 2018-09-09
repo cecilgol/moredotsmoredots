@@ -1,0 +1,4 @@
+folder-hook thorassic5/* source ~/.mutt/account.com.gmail.thorassic5
+folder-hook speechanddebate/* source ~/.mutt/account.org.speechanddebate.michaelstroud
+
+source ~/.mutt/account.com.gmail.thorassic5

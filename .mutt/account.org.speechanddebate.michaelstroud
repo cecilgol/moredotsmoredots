@@ -1,0 +1,16 @@
+set from = "michael.stroud@speechanddebate.org"
+set sendmail = "/usr/bin/msmtp -a michael.stroud@speechanddebate.org"
+set mbox    = "+michael.stroud@speechanddebate.org/archive"
+set postponed = "+michael.stroud@speechanddebate.org/drafts"
+
+color status green default
+
+macro index gc "<change-folder>+thorassic5/INBOX<enter>" "rotate accounts"
+
+
+macro index ga "<change-folder>=+michael.stroud@speechanddebate.org/archive<enter>" "Go to all mail"
+macro index gd "<change-folder>=+michael.stroud@speechanddebate.org/drafts<enter>" "Go to drafts"
+macro index gi "<change-folder>=+michael.stroud@speechanddebate.org/INBOX<enter>" "Go to inbox"
+macro index gt "<change-folder>=+michael.stroud@speechanddebate.org/trash<enter>" "Go to trash"
+macro index,pager d "<save-message>=+michael.stroud@speechanddebate.org/trash<enter><enter>" "Trash"
+macro index,pager y "<save-message>=+michael.stroud@speechanddebate.org/archive<enter><enter>" "Archive"
