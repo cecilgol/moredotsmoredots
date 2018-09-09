@@ -4,10 +4,11 @@ set alias_file = ~/.mutt/aliases
 set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
 set certificate_file = ~/.mutt/certificates
+set editor = "vim"
+
 
 #plugins
 #uncomment to use
-source ~/.mutt/sidebar
 
 #aliases
 set sort_alias = alias
@@ -27,12 +28,29 @@ unset mark_old           # read/new is good enough for me
 set beep_new             # bell on new mails
 set pipe_decode          # strip headers and eval mimes when piping
 set thorough_search      # strip headers and eval mimes before searching
+set sort = threads
+set sort_aux = reverse-last-date-received
+set mail_check_stats
 
-#sendmail
-set from     = "thorassic5@gmail.com"
-set sendmail = "/usr/bin/msmtp -a thorassic5"
-set sendmail_wait = 0
-unset record
+# the meat off the bone
+bind index g noop
+# macro index G "!mbsync -a^M" "Update through mbsync"
+
+# Compose View Options -------------------------------
+set realname = "m stroud"            # who am i?
+set envelope_from                    # which from?
+set sig_dashes                       # dashes before sig
+set edit_headers                     # show headers when composing
+set fast_reply                       # skip to compose when replying
+set askcc                            # ask for CC:
+set fcc_attach                       # save attachments with the body
+unset mime_forward                   # forward attachments as part of body
+set forward_format = "Fwd: %s"       # format of subject when forwarding
+set forward_decode                   # decode when forwarding
+set reply_to                         # reply to Reply to: field
+set reverse_name                     # reply as whomever it was to
+set include                          # include message in replies
+set forward_quote                    # include message in forwards
 
 #status
 set status_chars  = " *%A"
@@ -44,8 +62,9 @@ unignore from: to: cc: date: subject:   # show only these
 unhdr_order *                           # some distros order things by default
 hdr_order from: to: cc: date: subject:  # and in this order
 
-#accounts ----- uuuuuugh
-set spoolfile = "+thorassic5/Inbox"
+set spoolfile = "+thorassic5/INBOX"
 
-#colors
+source ~/.mutt/hooks
 source ~/.mutt/colors
+source ~/.mutt/mailboxes
+source ~/.mutt/sidebar

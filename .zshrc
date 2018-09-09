@@ -84,7 +84,8 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias i3config="vim ~/.i3/config"
-alias mutt="bash --login -c 'cd /tmp; /usr/bin/mutt' $argv"
+alias mutt="bash --login -c 'cd /tmp; /usr/bin/neomutt' $argv"
+
 
 export GOPATH=$HOME/Projects/go
 export PATH=$PATH:$HOME/.n/bin

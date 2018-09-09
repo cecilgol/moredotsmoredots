@@ -1,11 +1,20 @@
-set sidebar_width = 20 
-set sidebar_visible = yes
+set sidebar_width = 25
+set sidebar_visible
 set sidebar_short_path = yes
 set sidebar_delim_chars = .
 set sidebar_folder_indent = yes
 set sidebar_divider_char = '|'
+set mail_check_stats
 
+set browser_abbreviate_mailboxes = yes
 
+set sidebar_format = "%B %* [%?N?%N / ?%S]"
+
+bind index,pager <up> sidebar-prev
+bind index,pager <down> sidebar-next
+bind index,pager <right> sidebar-open
+
+color sidebar_new color221 color233
 
 # --------------------------------------------------------------------------
 # vim: syntax=muttrc

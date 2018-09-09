@@ -1,43 +1,114 @@
+# vim: ft=cfg:
+Create Slave
+Expunge Both
+SyncState *
+
+######thorassic5@gmail.com
 IMAPAccount thorassic5
 Host imap.gmail.com
 User thorassic5@gmail.com
 PassCmd "pass show email/thorassic5@gmail.com"
-UseIMAPS yes
-RequireSSL yes
+SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-bundle.crt
 
 IMAPStore thorassic5-remote
 Account thorassic5
 
 MaildirStore thorassic5-local
-Subfolders Verbatim
 Path ~/.mail/thorassic5/
-Inbox ~/.mail/thorassic5/Inbox
+Inbox ~/.mail/thorassic5/INBOX
 
-Channel thorassic5
-Master :thorassic5-remote:
-Slave :thorassic5-local:
-Create Both
-SyncState *
+Channel thorassic5-inbox
+Master :thorassic5-remote:INBOX
+Slave :thorassic5-local:INBOX
 
-IMAPAccount michael.stroud@speechanddebate.org 
+Channel thorassic5-archive
+Master ":thorassic5-remote:[Gmail]/All Mail"
+Slave :thorassic5-local:archive
+
+Channel thorassic5-drafts
+Master :thorassic5-remote:[Gmail]/Drafts
+Slave :thorassic5-local:drafts
+
+Channel thorassic5-sent
+Master ":thorassic5-remote:[Gmail]/Sent Mail"
+Slave :thorassic5-local:sent
+
+Channel thorassic5-spam
+Master :thorassic5-remote:[Gmail]/Spam
+Slave :thorassic5-local:spam
+
+Channel thorassic5-trash
+Master ":thorassic5-remote:[Gmail]/Trash"
+Slave :thorassic5-local:trash
+
+#Channel thorassic5-rest
+#Master :thorassic5-remote:
+#Slave :thorassic5-local:
+#Patterns * ![Gmail]* !archive !drafts !sent !spam !trash !Notes !gspace
+
+Group thorassic5
+Channel thorassic5-inbox
+Channel thorassic5-archive
+Channel thorassic5-drafts
+Channel thorassic5-sent
+Channel thorassic5-spam
+Channel thorassic5-trash
+#Channel thorassic5-rest
+
+######/thorassic5@gmail.com
+
+######michael.stroud@speechanddebate.org
+IMAPAccount michael.stroud@speechanddebate.org
 Host imap.gmail.com
 User michael.stroud@speechanddebate.org
 PassCmd "pass show email/michael.stroud@speechanddebate.org"
-UseIMAPS yes
-RequireSSL yes
+SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-bundle.crt
 
 IMAPStore michael.stroud@speechanddebate.org-remote
 Account michael.stroud@speechanddebate.org
 
 MaildirStore michael.stroud@speechanddebate.org-local
-Subfolders Verbatim
 Path ~/.mail/michael.stroud@speechanddebate.org/
-Inbox ~/.mail/michael.stroud@speechanddebate.org/Inbox
+Inbox ~/.mail/michael.stroud@speechanddebate.org/INBOX
 
-Channel michael.stroud@speechanddebate.org
+Channel michael.stroud@speechanddebate.org-inbox
+Master :michael.stroud@speechanddebate.org-remote:INBOX
+Slave :michael.stroud@speechanddebate.org-local:INBOX
+
+Channel michael.stroud@speechanddebate.org-archive
+Master ":michael.stroud@speechanddebate.org-remote:[Gmail]/All Mail"
+Slave :michael.stroud@speechanddebate.org-local:archive
+
+Channel michael.stroud@speechanddebate.org-drafts
+Master :michael.stroud@speechanddebate.org-remote:[Gmail]/Drafts
+Slave :michael.stroud@speechanddebate.org-local:drafts
+
+Channel michael.stroud@speechanddebate.org-sent
+Master ":michael.stroud@speechanddebate.org-remote:[Gmail]/Sent Mail"
+Slave :michael.stroud@speechanddebate.org-local:sent
+
+Channel michael.stroud@speechanddebate.org-spam
+Master :michael.stroud@speechanddebate.org-remote:[Gmail]/Spam
+Slave :michael.stroud@speechanddebate.org-local:spam
+
+Channel michael.stroud@speechanddebate.org-trash
+Master ":michael.stroud@speechanddebate.org-remote:[Gmail]/Trash"
+Slave :michael.stroud@speechanddebate.org-local:trash
+
+Channel michael.stroud@speechanddebate.org-rest
 Master :michael.stroud@speechanddebate.org-remote:
 Slave :michael.stroud@speechanddebate.org-local:
-Create Both
-SyncState *
+Patterns * ![Gmail]* !archive !drafts !sent !spam !trash
+
+Group michael.stroud@speechanddebate.org
+Channel michael.stroud@speechanddebate.org-inbox
+Channel michael.stroud@speechanddebate.org-archive
+Channel michael.stroud@speechanddebate.org-drafts
+Channel michael.stroud@speechanddebate.org-sent
+Channel michael.stroud@speechanddebate.org-spam
+Channel michael.stroud@speechanddebate.org-trash
+Channel michael.stroud@speechanddebate.org-rest
+
+######/michael.stroud@speechanddebate.org

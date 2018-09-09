@@ -446,3 +446,7 @@ au BufReadCmd   *.epub,*.docx      call zip#Browse(expand("<amatch>"))
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+autocmd BufNewFile,BufRead /tmp/neomutt* set noautoindent filetype=mail wm=0 tw=78 nonumber digraph nolist 
+autocmd BufNewFile,BufRead /tmp/neomutt* execute ":startinsert +7"
+autocmd BufNewFile,BufRead ~/tmp/neomutt* set noautoindent filetype=mail wm=0 tw=78 nonumber digraph nolist
+autocmd BufNewFile,BufRead ~/tmp/neomutt*  execute ":startinsert +7"
